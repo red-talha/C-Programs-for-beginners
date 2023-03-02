@@ -1,0 +1,462 @@
+TASK 1
+You only allowed to use ternary operator for decision.
+Write a computer program that take three numbers from user and check whether
+these are equal OR not. In case of equal print message “Numbers are equal” and in
+case of not equal print message should be “Numbers are not equal.”
+Hint: You can use multiple Ternary Operator
+
+
+
+
+# #include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, num3;
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "Enter second number: ";
+    cin >> num2;
+    cout << "Enter third number: ";
+    cin >> num3;
+
+    string result = (num1 == num2 && num2 == num3) ? "The Numbers are equal" : "The Numbers are not equal";
+    cout << result << endl;
+
+    return 0;
+}
+
+
+
+TASK 2
+(Ternary Operator)
+
+Input an integer variable from user.
+Tell whether it is a multiple of 2 or not.
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1;
+    cout << "Enter a number: ";
+    cin >> num1;
+    string result = (num1 % 2 == 0) ? "Yes its a multiple of 2." : "No its not a multiple of 2.";
+    cout << result;
+
+    return 0;
+}
+
+
+
+
+
+TASK 3
+(if-else if-else)
+Suppose that x, y, and z are int variables, and x = 10, y = 15, and z = 20. Write a single
+C++ code to determine whether the following expressions evaluate to true or false.
+a) !(x > 10)
+b) x <= 5 || y < 15
+c) (x != 5) && (y != z)
+d) x >= z || (x + y >= z)
+e) (x <= y - 2) && (y >= z) || (z - 2 != 20)
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 10, y = 15, z = 20;
+    if (!(x > 10))
+        cout << "!(x > 10) : True, " << !(x > 10) << endl;
+    if (x <= 5 || y < 15)
+        cout << "x <= 5 || y < 15 : False, " << (x <= 5 || y < 15) << endl;
+    if ((x != 5) && (y != z))
+        cout << "(x != 5) && (y != z) : True, " << ((x != 5) && (y != z)) << endl;
+    if ((x >= z) || (x + y >= z))
+        cout << "(x >= z) || (x + y >= z) : True, " << ((x >= z) || (x + y >= z)) << endl;
+    if ((x <= y - 2) && (y >= z) || (z - 2 != 20))
+        cout << "(x <= y - 2) && (y >= z) || (z - 2 != 20) : True, " << ((x <= y -     2) && (y >= z) || (z - 2 != 20)) << endl;
+        
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+TASK 4
+(If- else if- else)
+Write a program that asks user to enter number of sides of the shape then asks to
+enter the lengths. It is restricted to three major shapes. If user enters ‘0’ as number of
+sides then ask to enter ‘radius’ length and program print area of the circle. If user
+enters ‘3’ then program prints the area of the triangle. If user enters ‘4’ then program
+prints the area of the rectangle.
+Area of Circle: πr2 Area of Triangle: 1⁄2(l×w)
+Area of rectangle: l×w
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sides;
+    double length1, length2;
+    double pie = 3.14;
+
+    cout << "Enter the number of sides of the shape: ";
+    cin >> sides;
+
+    if (sides == 0) {
+        cout << "Enter the radius: ";
+        cin >> length1;
+        cout << "The area of the circle is: " << pie * (length1*length1) << endl;
+    }
+    else if (sides == 3) {
+        cout << "Enter the base and height of the triangle: ";
+        cin >> length1 >> length2;
+        cout << "The area of the triangle is: " << 0.5 * length1 * length2 << endl;
+    }
+    else if (sides == 4) {
+        cout << "Enter the length and width of the rectangle: ";
+        cin >> length1 >> length2;
+        cout << "The area of the rectangle is: " << length1 * length2 << endl;
+    }
+    else {
+        cout << "Invalid input." << endl;
+    }
+
+    return 0;
+}
+
+
+
+TASK 5
+
+
+
+
+
+
+
+(If- else if -else) (Marks = 1)
+
+Write a computer program that takes (Matric Marks, Intermediate Marks, and Entry
+Test Marks) from student and suggests degree programs of a BS degree applicants.
+If student’s Entry Test marks are less than 50%, OR Matric and Intermediate marks
+are less than 40%. In any of this case he/she is straight away rejected with message
+saying “not qualified”.
+Otherwise, if student’s aggregate is above 60% he/she is admitted to BSCS program.
+Otherwise, if student’s aggregate is above 55% he/she is admitted to BSSE program.
+Otherwise, if student’s aggregate is above 50% he/she is admitted to BSAI program.
+Otherwise, if student’s aggregate is above 45% he/she is admitted to BSBA program.
+Otherwise, student is shown message as “not qualified”.
+Note: Aggregate Formula = Matric (20 %) + Intermediate (20 %) + Entry Test (60 %)
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double matricMarks, intermediateMarks, entryTestMarks;
+    double aggregate;
+
+    cout << "Enter percentage of your Matric marks out of 100: ";
+    cin >> matricMarks;
+    cout << "Enter percentage your Intermediate marks out of 100: ";
+    cin >> intermediateMarks;
+    cout << "Enter percentage of your Entry Test marksout of 100: ";
+    cin >> entryTestMarks;
+
+    if (entryTestMarks < 50 || matricMarks < 40 || intermediateMarks < 40)
+        cout << "Not qualified." << endl;
+    else
+    {
+        aggregate = (matricMarks * 0.2) + (intermediateMarks * 0.2) + (entryTestMarks * 0.6);
+
+        if (aggregate > 60) {
+            cout << "Admitted to BSCS program." << endl;
+        }
+        else if (aggregate > 55) {
+            cout << "Admitted to BSSE program." << endl;
+        }
+        else if (aggregate > 50) {
+            cout << "Admitted to BSAI program." << endl;
+        }
+        else if (aggregate > 45) {
+            cout << "Admitted to BSBA program." << endl;
+        }
+        else {
+            cout << "Not qualified." << endl;
+        }
+    }
+
+    return 0;
+}
+
+TASK 6
+
+
+
+
+
+
+
+(switch)
+Write a program to perform the basic calculator operations using switch
+statement Demo of your program should just like that:
+First user will enter two variables and then program ask for the operation to be
+performed to those two variables.
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2;
+    char op;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "Enter second number: ";
+    cin >> num2;
+    cout << "Enter the operation you want to perform: ";
+    cin >> op;
+    switch (op) {
+    case '+':
+        cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+        break;
+    case '-':
+        cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+        break;
+    case '*':
+        cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+        break;
+    case '/':
+        if (num2 == 0) {
+            cout << "Math Error......." << endl;
+            break;
+        }
+        cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
+        break;
+    default:
+        cout << "Invalid operator" << endl;
+    }
+
+    return 0;
+}
+
+TASK 7
+
+
+
+
+
+
+
+(switch)
+
+You need to create a classifier using the if else and switch statement. Let say the name
+of your classifier program is “Alpha Dict”. The user of the Alpha Dict will always enter
+a character between the range of ‘A’ to ‘Z’ (Only Capitals), and then get result either it
+is “Vowel” OR “Consonant”.
+You are only allowed to use Switch statement to build logic for Vowel and Consonant,
+but you can use if-else to check whether the character is in the range of (A-Z).
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+int main() {
+    char c;
+    cout << "Enter a character: ";
+    cin >> c;
+
+    if (c >= 'A' && c <= 'Z') {
+        switch (c) {
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            cout << c << " is a Vowel" << endl;
+            break;
+        default:
+            cout << c << " is a Consonant" << endl;
+        }
+    }
+    else {
+        cout << "Error......Please enter a capital letter between A and Z." << endl;
+    }
+
+    return 0;
+}
+
+TASK 8
+
+
+
+
+
+Write a program to input three integer values. Compare the three values to find out if
+they are equal.
+I. Use nested if-else and print the message “All values are equal” if they are equal.
+Otherwise print the message “These values are different”.
+II. Also find the greatest value among three values.
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int a, b, c, greatest;
+    cout << "Enter first number: ";
+    cin >> a;
+    cout << "Enter second number: ";
+    cin >> b;
+    cout << "Enter third number: ";
+    cin >> c;
+    greatest = a;
+    if (a == b && b == c && a==c) {
+        cout << "All values are equal" << endl;
+    }
+    else {
+        cout << "These values are different" << endl;
+        if (b > greatest) {
+            greatest = b;
+        }
+        if (c > greatest) {
+            greatest = c;
+        }
+        cout << "The greatest value is: " << greatest << endl;
+    }
+    return 0;
+}
+
+TASK 9
+
+
+
+
+(using nested If-else statement)
+Write a program to find out the roots of quadratic equation (ax2 + bx + c=0).
+The user enter values of a, b and c only. The values entered must be greater than
+0, if any of the value is 0 then print “The value can’t be zero”. If any value entered
+is less than zero then print “Values must be greater than Zero”.
+The roots are calculated as:
+i) If disc. is greater than zero then roots are real and unequal.
+root1=(-b+(dics) 1/2 /2*a).
+root2=(-b-(dics) 1/2 /2*a).
+
+Page 6
+
+National University
+O f C o m p u t e r & E m e r g i n g S c i e n c e s F a i s a l a b a d - C h i n i o t C a m p u s
+ii) If disc. is less than zero then roots are imaginary .
+root1=(-b+i(dics) 1/2 /2*a).
+root2=(-b-i(dics) 1/2 /2*a).
+iii) If dics. is equal to zero then roots
+are real.
+
+root1=root2= -b/(2*a).
+Note:
+
+ “disc” mean Discriminator having value dics= b2
+-4*a*c.
+
+ Use <math.h> library in your code and use ‘sqrtf’ for square root.
+ The value of iota is constant i.e. i=-1.
+
+
+
+
+
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+    float a, b, c;
+    cout << "Enter values for a, b and c for equation (ax2 + bx + c=0): ";
+    cin >> a >> b >> c;
+    if (a < 0 || b < 0 || c < 0) {
+        if (a == 0 || b == 0 || c == 0) {
+            cout << "The value cannot be zero" << endl;
+        }
+        else {
+            cout << "Values must be greater than Zero" << endl;
+        }
+    }
+    else {
+        float disc = (b*b) - (4 * a * c);
+        if (disc > 0) {
+            float root1 = ((-b + sqrt(disc)) / (2 * a));
+            float root2 = ((-b - sqrt(disc)) / (2 * a));
+            cout << "Roots are real and unequal" << endl;
+            cout << "Root1: " << root1 << endl;
+            cout << "Root2: " << root2 << endl;
+        }
+        else if (disc < 0) {
+            float realPart = ( - b / (2 * a));
+            float imgPART = (sqrt(-disc) / (2 * a));
+            cout << "Roots are imaginary" << endl;
+            cout << "Root1: " << realPart << " + i" << imgPART << endl;
+            cout << "Root2: " << realPart << " - i" << imgPART << endl;
+        }
+        else {
+            float root = -b / (2 * a);
+            cout << "Roots are real and equal" << endl;
+            cout << "Root1: " << root << endl;
+            cout << "Root2: " << root << endl;
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+
+
